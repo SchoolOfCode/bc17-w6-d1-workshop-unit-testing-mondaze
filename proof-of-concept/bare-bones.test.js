@@ -1,11 +1,9 @@
 import { expect, test } from 'vitest';
+import { sum } from './sum.js'
 
-function sum(a, b) {
-    return a + b
-  }
 
   test('bare bones test should pass', () => {
-    expect(sum(1, 2)).toBe(3)
+    expect(sum(5, 7)).toBe(12)
   })
 
   console.log(test);
