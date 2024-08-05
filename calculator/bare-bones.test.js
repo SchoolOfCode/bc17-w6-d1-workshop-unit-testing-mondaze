@@ -11,8 +11,11 @@ import { operator, calculate } from './calculator';
     expect(calculate('/', 121, 11)). toBe(11);
     expect(calculate('sq', 5)). toBe(25);
     expect(calculate('sq', 3, 44)). toBe(9);
-    expect(calculate('%', 124, 56)). toBe(`Unsupported operators ${operator}`);
-    expect(calculate('🍕', -41414, 2)). toBe(`Unsupported operators ${operator}`);
+    
+    expect(() => calculate('%', 124, 56)).toThrow('Unsupported operator %');
+    expect(() => calculate(operator, 124, 56)).toThrow(`Unsupported operator ${operator}`);
+    //expect(calculate('%', 124, 56)). toThrow(`Unsupported operators ${operator}`);
+    //expect(calculate('🍕', -41414, 2)).toThrow(`Unsupported operators ${operator}`);
     
     
   })
