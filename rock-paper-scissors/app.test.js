@@ -13,13 +13,13 @@ import {
 from './app.js'
 
 test('RPS logic', () => {
-    expect(calculateRoundResult(ROCK , ROCK)).toBe("draw");
-//     expect(calculateRoundResult(ROCK , PAPER)).toBe(LOSS);
-//     expect(calculateRoundResult(ROCK , SCISSORS)).toBe(WIN);
-//     expect(calculateRoundResult(PAPER , ROCK)).toBe(WIN);
-//     expect(calculateRoundResult(PAPER , PAPER)).toBe(DRAW);
-//     expect(calculateRoundResult(PAPER , SCISSORS)).toBe(LOSS);
-//     expect(calculateRoundResult(SCISSORS , ROCK)).toBe(LOSS);
-//     expect(calculateRoundResult(SCISSORS , SCISSORS)).toBe(DRAW);
-//     expect(calculateRoundResult(SCISSORS , PAPER)).toBe(WIN);
+    expect(calculateRoundResult(ROCK, ROCK).outcome).toBe("draw");
+    expect(calculateRoundResult(ROCK , PAPER).outcome).toBe("loss");
+    expect(calculateRoundResult(ROCK , SCISSORS).outcome).toBe(WIN);
+    expect(calculateRoundResult(PAPER , ROCK).outcome).toBe(WIN);
+    expect(calculateRoundResult(PAPER , PAPER).outcome).toBe(DRAW);
+    expect(calculateRoundResult(PAPER , SCISSORS).outcome).toBe(LOSS);
+    expect(calculateRoundResult(SCISSORS , ROCK).outcome).toBe(LOSS);
+    expect(calculateRoundResult(SCISSORS , SCISSORS).outcome).toBe(DRAW);
+    expect(calculateRoundResult(SCISSORS , PAPER).outcome).toBe(WIN);
  })
